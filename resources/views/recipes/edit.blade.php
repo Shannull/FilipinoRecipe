@@ -15,7 +15,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="col-span-1">
                             <x-label for="title" value="{{ __('Title') }}" />
-                            <x-input id="title" class="block mt-1 w-full" type="text" name="title" value="{{ $recipe->title }}" required autofocus />
+                            <x-input id="title" class="block mt-1 w-full rounded-md" type="text" name="title" value="{{ $recipe->title }}" required autofocus />
                         </div>
 
                         <div class="col-span-1">
@@ -31,22 +31,22 @@
 
                         <div class="col-span-1 md:col-span-2">
                             <x-label for="introductions" value="{{ __('Introductions') }}" />
-                            <textarea id="introductions" class="block mt-1 w-full border-gray-300 rounded-md shadow-sm" name="introductions" required>{{ $recipe->introductions }}</textarea>
+                            <textarea id="introductions" class="block mt-1 w-full h-32 rounded-md border-gray-300" name="introductions" required>{{ $recipe->introductions }}</textarea>
                         </div>
 
                         <div class="col-span-1 md:col-span-2">
                             <x-label for="ingredients" value="{{ __('Ingredients') }}" />
-                            <textarea id="ingredients" class="block mt-1 w-full border-gray-300 rounded-md shadow-sm" name="ingredients" required>{{ $recipe->ingredients }}</textarea>
+                            <textarea id="ingredients" class="block mt-1 w-full h-32 rounded-md border-gray-300" name="ingredients" required>{{ $recipe->ingredients }}</textarea>
                         </div>
 
                         <div class="col-span-1 md:col-span-2">
                             <x-label for="directions" value="{{ __('Directions') }}" />
-                            <textarea id="directions" class="block mt-1 w-full border-gray-300 rounded-md shadow-sm" name="directions" required>{{ $recipe->directions }}</textarea>
+                            <textarea id="directions" class="block mt-1 w-full h-32 rounded-md border-gray-300" name="directions" required>{{ $recipe->directions }}</textarea>
                         </div>
 
                         <div class="col-span-1 md:col-span-2">
                             <x-label for="image" value="{{ __('Image') }}" />
-                            <x-input id="image" class="block mt-1 w-full" type="file" name="image" />
+                            <x-input id="image" class="block mt-1 w-full rounded-md" type="file" name="image" />
                             @if ($recipe->image)
                                 <img src="{{ asset('storage/' . $recipe->image) }}" alt="{{ $recipe->title }}" class="mt-4 max-w-xs h-auto rounded-md shadow-md">
                             @endif

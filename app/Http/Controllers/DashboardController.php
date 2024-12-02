@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Recipe;
 
-class WelcomeController extends Controller
+class DashboardController extends Controller
 {
     public function index(Request $request)
     {
@@ -26,6 +26,6 @@ class WelcomeController extends Controller
 
         $recipes = $query->get()->groupBy('category');
 
-        return view('components.welcome', compact('recipes'));
+        return view('dashboard', compact('recipes'));
     }
 }

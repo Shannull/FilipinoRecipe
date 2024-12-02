@@ -11,58 +11,26 @@ class RecipePolicy
     use HandlesAuthorization;
 
     /**
-     * Determine whether the user can view any models.
+     * Determine whether the user can view the recipe.
      */
-    public function viewAny(User $user): bool
+    public function view(User $user, Recipe $recipe)
     {
-        return true; // Allow viewing any recipes
+        return true; // Allow all users to view recipes
     }
 
     /**
-     * Determine whether the user can view the model.
+     * Determine whether the user can update the recipe.
      */
-    public function view(User $user, Recipe $recipe): bool
+    public function update(User $user, Recipe $recipe)
     {
-        return $user->id === $recipe->user_id; // Allow viewing if the user owns the recipe
+        return $user->id === $recipe->user_id;
     }
 
     /**
-     * Determine whether the user can create models.
+     * Determine whether the user can delete the recipe.
      */
-    public function create(User $user): bool
+    public function delete(User $user, Recipe $recipe)
     {
-        return true; // Allow creating recipes
+        return $user->id === $recipe->user_id;
     }
-
-    /**
-     * Determine whether the user can update the model.
-     */
-    public function update(User $user, Recipe $recipe): bool
-    {
-        return $user->id === $recipe->user_id; // Allow updating if the user owns the recipe
-    }
-
-    /**
-     * Determine whether the user can delete the model.
-     */
-    public function delete(User $user, Recipe $recipe): bool
-    {
-        return $user->id === $recipe->user_id; // Allow deleting if the user owns the recipe
-    }
-
-    /**
-     * Determine whether the user can restore the model.
-     */
-    public function restore(User $user, Recipe $recipe): bool
-    {
-        return $user->id === $recipe->user_id; // Allow restoring if the user owns the recipe
-    }
-
-    /**
-     * Determine whether the user can permanently delete the model.
-     */
-    public function forceDelete(User $user, Recipe $recipe): bool
-    {
-        return $user->id === $recipe->user_id; // Allow permanently deleting if the user owns the recipe
-    }
-}   
+}

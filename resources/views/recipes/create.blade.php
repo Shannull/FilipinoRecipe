@@ -12,32 +12,32 @@
 
                 <div class="mb-4">
                     <x-label for="title" value="{{ __('Title') }}" />
-                    <x-input id="title" class="block mt-1 w-full" type="text" name="title" :value="old('title')" required autofocus />
+                    <x-input id="title" class="block mt-1 w-full rounded-md" type="text" name="title" :value="old('title')" required autofocus />
                 </div>
 
                 <div class="mb-4">
                     <x-label for="introductions" value="{{ __('Introductions') }}" />
-                    <textarea id="introductions" class="block mt-1 w-full" name="introductions" required>{{ old('introductions') }}</textarea>
+                    <textarea id="introductions" class="block mt-1 w-full h-32 rounded-md border-gray-300" name="introductions" required>{{ old('introductions') }}</textarea>
                 </div>
 
                 <div class="mb-4">
                     <x-label for="ingredients" value="{{ __('Ingredients') }}" />
-                    <textarea id="ingredients" class="block mt-1 w-full" name="ingredients" required>{{ old('ingredients') }}</textarea>
+                    <textarea id="ingredients" class="block mt-1 w-full h-32 rounded-md border-gray-300" name="ingredients" required>{{ old('ingredients') }}</textarea>
                 </div>
 
                 <div class="mb-4">
                     <x-label for="directions" value="{{ __('Directions') }}" />
-                    <textarea id="directions" class="block mt-1 w-full" name="directions" required>{{ old('directions') }}</textarea>
+                    <textarea id="directions" class="block mt-1 w-full h-32 rounded-md border-gray-300" name="directions" required>{{ old('directions') }}</textarea>
                 </div>
 
                 <div class="mb-4">
                     <x-label for="image" value="{{ __('Image') }}" />
-                    <x-input id="image" class="block mt-1 w-full" type="file" name="image" />
+                    <x-input id="image" class="block mt-1 w-full rounded-md" type="file" name="image" />
                 </div>
 
                 <div class="mb-4">
                     <x-label for="category" value="{{ __('Category') }}" />
-                    <select id="category" name="category[]" class="block mt-1 w-full" multiple required>
+                    <select id="category" name="category[]" class="block mt-1 w-full rounded-md border-gray-300" multiple required>
                         <option value="Rice">Rice</option>
                         <option value="Soup and Stews">Soup and Stews</option>
                         <option value="Pulutan">Pulutan</option>

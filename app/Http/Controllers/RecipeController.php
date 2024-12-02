@@ -12,7 +12,7 @@ class RecipeController extends Controller
 
     public function index()
     {
-        $recipes = auth()->user()->recipes; // Fetch recipes for the authenticated user
+        $recipes = auth()->user()->recipes()->distinct()->get(); // Fetch unique recipes for the authenticated user
         return view('recipes.index', compact('recipes'));
     }
 
@@ -47,6 +47,8 @@ class RecipeController extends Controller
     public function show(Recipe $recipe)
     {
         $this->authorize('view', $recipe); // Ensure the user is authorized to view the recipe
+        $recipe->load('comments.user'); // Load comments with user relationship
+        session(['previous_url' => url()->previous()]); // Store the previous URL in the session
         return view('recipes.show', compact('recipe'));
     }
 
